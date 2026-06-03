@@ -3,27 +3,25 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>DD//NASCE — qualcosa sta per nascere a Varese</title>
-<meta name="description" content="28.05 — Varese. Drink like a rebel. Taste The Wave." />
-<meta property="og:title" content="DD//NASCE — 28.05 Varese" />
-<meta property="og:description" content="Qualcosa sta per nascere. Drink like a rebel." />
-<meta name="theme-color" content="#0A0A0A" />
-<!-- v3 · papera caricata -->
+<title>DUCK DIVE PUB — Opening Party · 19 Giugno · Varese</title>
+<meta name="description" content="Apre il primo Duck Dive Pub a Varese. Opening Party venerdì 19 giugno dalle 18:00, Via Cavallotti. DJ? Lo scoprirete presto. Drink like a rebel." />
+<meta property="og:title" content="DUCK DIVE PUB — Opening Party · 19.06 Varese" />
+<meta property="og:description" content="Apre il primo Duck Dive Pub a Varese. 19 giugno dalle 18:00. DJ? Lo scoprirete presto. Taste The Wave." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="poster.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="poster.jpg" />
+<meta name="theme-color" content="#14110d" />
+<!-- v5 · opening party / concrete + graffiti -->
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ctext x='50%25' y='62%25' text-anchor='middle' font-family='monospace' font-size='38' font-weight='900' fill='%23FF6B35'%3EDD%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2314110d'/%3E%3Ctext x='50%25' y='62%25' text-anchor='middle' font-family='Georgia,serif' font-size='34' font-weight='900' fill='%23E0A92E'%3EDD%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Permanent+Marker&display=swap" rel="stylesheet">
 
 <style>
-  /* === Font ufficiali Duck Dive === */
-  @font-face{
-    font-family:"Ranille";
-    src:url("https://cdn.prod.website-files.com/66efc2ecea125ae2bbf9838e/66efc667b53c1e60b79c2f78_Genty%20Regular.ttf") format("truetype");
-    font-weight:400;font-display:swap;
-  }
-  @font-face{
-    font-family:"Ranille";
-    src:url("https://cdn.prod.website-files.com/66efc2ecea125ae2bbf9838e/66f03b9a43ba89229477c82d_Ranille.ttf") format("truetype");
-    font-weight:400;font-display:swap;
-  }
+  /* === Font mono ufficiale Duck Dive === */
   @font-face{
     font-family:"BasierMono";
     src:url("https://cdn.prod.website-files.com/66efc2ecea125ae2bbf9838e/66efc702ad05806eb1f008d9_basiercirclemono-regular-webfont.woff") format("woff");
@@ -36,520 +34,300 @@
   }
 
   :root{
-    --orange:#FF6B35;
-    --cyan:#00D4FF;
-    --magenta:#FF2E63;
-    --bone:#F5F0E8;
-    --ink:#0A0A0A;
-    --glow-o: 0 0 6px #FF6B35, 0 0 22px rgba(255,107,53,.55);
-    --glow-c: 0 0 6px #00D4FF, 0 0 22px rgba(0,212,255,.5);
+    --ink:#14110d;        /* cemento scuro caldo */
+    --ink2:#0c0a07;
+    --gold:#E0A92E;       /* oro logo */
+    --gold-d:#C8842A;
+    --cream:#F4EDDF;      /* graffiti panna */
+    --white:#ffffff;
+    --rust:#9c5a36;       /* ruggine parete */
+    --muted:rgba(244,237,223,.62);
+    --line:rgba(244,237,223,.16);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:var(--ink);color:var(--bone);min-height:100%;overflow-x:hidden}
+  html,body{background:var(--ink);color:var(--cream);min-height:100%;overflow-x:hidden}
   body{
     font-family:"BasierMono", ui-monospace, monospace;
     font-size:14px;line-height:1.55;letter-spacing:.01em;
     -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
     background:
-      radial-gradient(900px 600px at 50% -10%, rgba(255,107,53,.16), transparent 60%),
-      radial-gradient(700px 500px at 90% 110%, rgba(0,212,255,.10), transparent 60%),
+      radial-gradient(1000px 720px at 50% -12%, rgba(224,169,46,.12), transparent 60%),
+      radial-gradient(720px 620px at 10% 82%, rgba(156,90,54,.20), transparent 62%),
+      radial-gradient(760px 640px at 92% 26%, rgba(224,169,46,.07), transparent 60%),
       var(--ink);
   }
-
-  /* film grain leggero */
+  /* texture cemento: seams verticali + grana */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:1;
+    background:repeating-linear-gradient(90deg, rgba(0,0,0,.16) 0 1px, transparent 1px 33.33%);
+    mix-blend-mode:multiply;opacity:.5;
+  }
   body::after{
     content:"";position:fixed;inset:-50%;pointer-events:none;z-index:1;
-    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .3 0'/></filter><rect width='220' height='220' filter='url(%23n)' opacity='.4'/></svg>");
-    opacity:.07;
+    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .4 0'/></filter><rect width='240' height='240' filter='url(%23n)' opacity='.5'/></svg>");
+    opacity:.06;
   }
 
-  .wrap{position:relative;z-index:3;max-width:1160px;margin:0 auto;padding:22px 22px 60px}
+  .wrap{position:relative;z-index:3;max-width:1160px;margin:0 auto;padding:20px 22px 60px}
 
   /* TOP */
   .top{
     display:flex;justify-content:space-between;align-items:center;
-    padding:9px 14px;border:1px solid rgba(245,240,232,.12);
-    border-radius:999px;backdrop-filter:blur(8px);background:rgba(10,10,10,.4);
+    padding:9px 15px;border:1px solid var(--line);
+    border-radius:4px;backdrop-filter:blur(6px);background:rgba(12,10,7,.45);
   }
-  .logo{font-family:"Ranille",sans-serif;letter-spacing:.08em;font-size:18px;color:var(--bone)}
-  .logo b{color:var(--orange);text-shadow:var(--glow-o)}
-  .pill{font-size:10px;text-transform:uppercase;letter-spacing:.3em;color:rgba(245,240,232,.7);
-    border:1px solid rgba(245,240,232,.18);padding:6px 12px;border-radius:999px}
-  .blink{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:var(--glow-o);margin-right:8px;animation:bl 1.2s infinite}
+  .logo{font-family:"Bevan",serif;letter-spacing:.02em;font-size:17px;color:var(--cream);text-transform:uppercase}
+  .logo b{color:var(--gold)}
+  .logo .sl{color:var(--muted);font-weight:400;margin:0 2px}
+  .pill{font-size:10px;text-transform:uppercase;letter-spacing:.3em;color:var(--muted);
+    border:1px solid var(--line);padding:6px 12px;border-radius:999px;white-space:nowrap}
+  .blink{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px rgba(224,169,46,.8);margin-right:8px;animation:bl 1.3s infinite}
   @keyframes bl{0%,55%{opacity:1}56%,100%{opacity:.2}}
 
-  /* HERO */
-  .hero{margin:54px 0 26px;text-align:center}
-  .kicker{
-    display:inline-block;font-size:11px;letter-spacing:.4em;text-transform:uppercase;
-    color:var(--cyan);text-shadow:var(--glow-c);
-    border:1px solid rgba(0,212,255,.3);padding:7px 13px;border-radius:999px;
+  /* graffiti marker accents */
+  .scrawl{
+    position:absolute;font-family:"Permanent Marker",cursive;
+    color:var(--gold-d);opacity:.5;pointer-events:none;z-index:2;white-space:nowrap;
+    text-shadow:0 1px 0 rgba(0,0,0,.4);
+  }
+  .scrawl.s1{top:78px;left:-6px;transform:rotate(-12deg);font-size:34px;color:var(--cream);opacity:.32}
+  .scrawl.s2{top:150px;right:-4px;transform:rotate(9deg);font-size:30px}
+  .scrawl.s3{bottom:38%;left:-10px;transform:rotate(-90deg);transform-origin:left;font-size:22px;color:var(--cream);opacity:.28}
+  .star{position:absolute;z-index:2;opacity:.4;pointer-events:none}
+  @media (max-width:860px){.scrawl,.star{display:none}}
+
+  /* HERO grid: poster + panel */
+  .hero{display:grid;grid-template-columns:.92fr 1.08fr;gap:34px;align-items:center;margin:46px 0 20px}
+  @media (max-width:860px){.hero{grid-template-columns:1fr;gap:26px;margin:26px 0 10px}}
+
+  /* POSTER appeso al muro */
+  .flyer{position:relative;justify-self:center;max-width:400px;width:100%}
+  .flyer img{
+    width:100%;height:auto;display:block;border-radius:3px;
+    box-shadow:0 28px 50px rgba(0,0,0,.6), 0 4px 14px rgba(0,0,0,.5);
+    transform:rotate(-1.8deg);
+    border:1px solid rgba(0,0,0,.6);
+  }
+  .flyer::before,.flyer::after{
+    content:"";position:absolute;z-index:2;width:96px;height:26px;
+    background:linear-gradient(180deg, rgba(244,237,223,.42), rgba(224,169,46,.22));
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 2px 6px rgba(0,0,0,.4);
+  }
+  .flyer::before{top:-12px;left:14px;transform:rotate(-7deg)}
+  .flyer::after{top:-12px;right:14px;transform:rotate(6deg)}
+
+  /* PANEL */
+  .panel{position:relative}
+  .kick{
+    font-family:"Permanent Marker",cursive;font-size:26px;color:var(--gold);
+    transform:rotate(-2deg);display:inline-block;line-height:.9;margin-bottom:6px;
+    text-shadow:0 2px 0 rgba(0,0,0,.35);
   }
   h1{
-    font-family:"Ranille", sans-serif;
-    font-weight:400;
-    font-size:clamp(48px, 9vw, 120px);
-    line-height:.95;
-    letter-spacing:.02em;
-    margin:20px auto 6px;max-width:18ch;
-    color:var(--bone);
-    font-synthesis:none;
+    font-family:"Bevan",serif;font-weight:400;text-transform:uppercase;
+    font-size:clamp(34px,5.4vw,64px);line-height:.96;letter-spacing:.005em;
+    color:var(--cream);margin:2px 0 4px;
   }
-  h1 .accent{
-    display:block;font-family:"Genty",cursive;font-weight:400;
-    font-size:1.1em;line-height:.9;color:var(--orange);
-    letter-spacing:0;text-shadow:var(--glow-o);
-    margin-top:-.02em;
+  h1 .g{color:var(--gold)}
+  .sub{
+    font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--muted);margin:8px 0 0;
   }
-  .lead{
-    margin:14px auto 0;max-width:54ch;color:rgba(245,240,232,.75);
-    font-size:clamp(13px,1.2vw,15px);letter-spacing:.02em;
-  }
-  .lead b{color:var(--bone)}
+  .lead{margin:16px 0 0;max-width:48ch;color:var(--muted);font-size:14px}
+  .lead b{color:var(--cream)}
 
-  /* COUNTDOWN */
-  .count{
-    margin:34px auto 12px;display:grid;grid-template-columns:repeat(4,1fr);
-    gap:10px;max-width:720px;
-  }
+  /* COUNTDOWN — stencil boxes */
+  .count{margin:24px 0 8px;display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:420px}
   .cell{
-    border:1px solid rgba(245,240,232,.14);
-    background:linear-gradient(180deg, rgba(255,107,53,.05), rgba(0,212,255,.02));
-    border-radius:12px;padding:16px 6px 10px;text-align:center;
-    position:relative;overflow:hidden;
+    border:1.5px solid var(--line);border-radius:5px;padding:14px 4px 9px;text-align:center;
+    position:relative;overflow:hidden;background:rgba(12,10,7,.35);
   }
-  .cell::before{
-    content:"";position:absolute;inset:auto 0 0 0;height:1.5px;
-    background:linear-gradient(90deg,transparent,var(--orange),transparent);opacity:.7;
-  }
-  .num{
-    font-family:"Ranille",sans-serif;font-weight:400;
-    font-size:clamp(40px,6.5vw,68px);line-height:1;color:var(--bone);
-    font-variant-numeric:tabular-nums;letter-spacing:.04em;
-  }
-  .lbl{font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:rgba(245,240,232,.55);margin-top:6px}
+  .cell::before{content:"";position:absolute;inset:auto 8px 0 8px;height:2px;background:var(--gold);opacity:.85}
+  .num{font-family:"Bevan",serif;font-size:clamp(30px,5vw,44px);line-height:1;color:var(--cream);font-variant-numeric:tabular-nums}
+  .lbl{font-size:8.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-top:6px}
 
-  .when{
-    margin-top:14px;color:rgba(245,240,232,.65);font-size:11px;letter-spacing:.3em;text-transform:uppercase
-  }
-  .when b{color:var(--cyan);text-shadow:var(--glow-c)}
+  .when{margin-top:12px;color:var(--muted);font-size:11px;letter-spacing:.26em;text-transform:uppercase}
+  .when b{color:var(--gold)}
 
   /* CTA */
-  .cta{margin:24px auto 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .cta{margin:20px 0 0;display:flex;gap:10px;flex-wrap:wrap}
   .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:12px 16px;border-radius:12px;border:1px solid rgba(245,240,232,.18);
-    background:rgba(245,240,232,.04);color:var(--bone);
-    font-family:"BasierMono",monospace;font-size:11px;letter-spacing:.25em;text-transform:uppercase;
-    cursor:pointer;text-decoration:none;transition:.2s ease;
+    display:inline-flex;align-items:center;gap:8px;cursor:pointer;text-decoration:none;
+    padding:12px 16px;border-radius:6px;border:1px solid var(--line);
+    background:rgba(244,237,223,.04);color:var(--cream);
+    font-family:"BasierMono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;transition:.18s ease;
   }
-  .btn:hover{background:rgba(245,240,232,.08);border-color:var(--orange);box-shadow:var(--glow-o)}
-  .btn.primary{
-    background:var(--orange);border-color:var(--orange);color:var(--ink);font-weight:700;
-    box-shadow:var(--glow-o);
-  }
-  .btn.primary:hover{filter:brightness(1.08)}
+  .btn:hover{background:rgba(244,237,223,.09);border-color:var(--gold)}
+  .btn.primary{background:var(--gold);border-color:var(--gold);color:var(--ink2);font-weight:700;box-shadow:0 6px 18px rgba(224,169,46,.28)}
+  .btn.primary:hover{filter:brightness(1.07)}
 
-  /* GRID */
-  .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px;margin:56px 0}
-  @media (max-width:820px){.grid{grid-template-columns:1fr}}
-
-  /* WANTED */
-  .wanted{
-    border-radius:16px;overflow:hidden;
-    transform:rotate(-1.4deg);
-    box-shadow:0 30px 60px rgba(0,0,0,.5);
-    background:#f3c419;
-    border:6px solid #0A0A0A;
-    display:flex;flex-direction:column;
+  /* DJ BAND */
+  .dj{
+    margin:52px 0 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;
+    background:
+      radial-gradient(420px 220px at 88% 10%, rgba(224,169,46,.12), transparent 60%),
+      linear-gradient(180deg, rgba(20,17,13,.85), rgba(12,10,7,.9));
+    display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;padding:26px 28px;
   }
-  .wanted .head{
-    background:#0A0A0A;color:var(--bone);
-    text-align:center;padding:14px 14px 12px;
-    border-bottom:5px dashed #f3c419;
+  @media (max-width:640px){.dj{grid-template-columns:1fr;text-align:center;gap:14px;padding:22px 18px}}
+  .dj .q{
+    font-family:"Bevan",serif;font-size:clamp(64px,12vw,118px);line-height:.8;color:transparent;
+    -webkit-text-stroke:2px var(--gold);text-stroke:2px var(--gold);
+    text-shadow:0 0 26px rgba(224,169,46,.25);
   }
-  .wanted .head .small{font-size:9px;letter-spacing:.5em;color:#f3c419}
-  .wanted .head .big{
-    font-family:"Ranille",sans-serif;font-weight:400;
-    font-size:clamp(40px,6vw,68px);
-    line-height:.9;letter-spacing:.06em;color:#f3c419;
-  }
-  .wanted .head .sub{font-family:"BasierMono",monospace;font-size:10px;color:rgba(245,240,232,.7);margin-top:4px;letter-spacing:.25em}
-
-  .wanted .imgBox{
-    background:#0A0A0A;padding:12px;
-    position:relative;
-  }
-  .wanted .imgBox img{
-    width:100%;height:auto;display:block;border-radius:6px;
-    background:#1a1a1a;
-  }
-  .wanted .imgBox .placeholder{
-    aspect-ratio:5/6;display:flex;align-items:center;justify-content:center;text-align:center;
-    color:rgba(245,240,232,.5);font-family:"BasierMono",monospace;font-size:11px;letter-spacing:.15em;
-    border:1px dashed rgba(245,240,232,.2);border-radius:6px;padding:18px;
-  }
-
-  .wanted .body{
-    background:#f3c419;color:#0A0A0A;padding:14px 16px 16px;text-align:center;
-  }
-  .wanted .body .name{
-    font-family:"Ranille",sans-serif;font-size:22px;letter-spacing:.04em;text-transform:uppercase;line-height:1;
-  }
-  .wanted .body .akah{font-family:"BasierMono",monospace;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#7a3a14;line-height:1;margin-top:6px}
-  .wanted .body .charges{
-    list-style:none;display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:10px
-  }
-  .wanted .body .charges li{
-    font-family:"BasierMono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;
-    background:#0A0A0A;color:#f3c419;padding:4px 7px;border-radius:3px;
-  }
-
-  /* INDIZI */
-  .clues{
-    border:1px solid rgba(245,240,232,.14);border-radius:16px;
-    background:linear-gradient(180deg, rgba(18,18,18,.85), rgba(10,10,10,.85));
-    padding:24px;position:relative;
-  }
-  .clues h2{
-    font-family:"Ranille",sans-serif;font-weight:400;
-    font-size:clamp(28px,3.6vw,44px);
-    text-transform:uppercase;letter-spacing:.03em;line-height:1;margin-bottom:6px;
-  }
-  .clues h2 em{font-style:normal;color:var(--cyan);text-shadow:var(--glow-c)}
-  .clues .meta{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:rgba(245,240,232,.5);margin-bottom:14px}
-  .clues .intro{color:rgba(245,240,232,.75);font-size:14px;margin-bottom:16px}
-
-  .rows{border-top:1px dashed rgba(245,240,232,.14)}
-  .row{
-    display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;
-    padding:11px 0;border-bottom:1px dashed rgba(245,240,232,.12);
-    font-size:14px;
-  }
-  .k{color:rgba(245,240,232,.55);letter-spacing:.2em;text-transform:uppercase;font-size:10px}
-  .v{color:var(--bone);font-weight:700;letter-spacing:.04em}
-  .v .censor{
-    display:inline-block;
-    width:calc(var(--w,2) * .58em);
-    height:.62em;
-    background:#0A0A0A;
-    border:1px solid rgba(245,240,232,.28);
-    border-radius:2px;
-    vertical-align:.04em;
-    margin:0 .14em;
-    position:relative;
-    user-select:none;
-  }
-  .v .censor::after{
-    content:"";position:absolute;inset:1px;
-    background:repeating-linear-gradient(90deg, rgba(245,240,232,.08) 0 2px, transparent 2px 5px);
-    border-radius:1px;
-  }
-  .v.accent-c{color:var(--cyan);text-shadow:var(--glow-c)}
-  .v.accent-o{color:var(--orange);text-shadow:var(--glow-o)}
-
-  .actions{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
-
-  /* MANIFESTO con immagine */
-  .manifesto{
-    margin:48px -22px 0;position:relative;overflow:hidden;
-    border-top:1px solid rgba(245,240,232,.1);border-bottom:1px solid rgba(245,240,232,.1);
-  }
-  .manifesto .bg{
-    position:absolute;inset:0;
-    background:url("manifesto.jpg") center/cover no-repeat;
-    filter:saturate(.9) brightness(.6);
-  }
-  .manifesto .bg::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg, rgba(10,10,10,.4), rgba(10,10,10,.85));
-  }
-  .manifesto .inner{
-    position:relative;z-index:2;text-align:center;padding:80px 22px;max-width:780px;margin:0 auto;
-  }
-  .manifesto h3{
-    font-family:"Ranille",sans-serif;font-weight:400;
-    font-size:clamp(34px,5.5vw,68px);
-    text-transform:uppercase;letter-spacing:.04em;line-height:1;
-  }
-  .manifesto h3 em{
-    font-style:normal;font-family:"Ranille",sans-serif;color:var(--magenta);
-    text-shadow:0 0 18px rgba(255,46,99,.45);letter-spacing:.04em;
-  }
-  .manifesto p{margin-top:14px;color:rgba(245,240,232,.8);font-size:14px;letter-spacing:.04em}
-  .manifesto .tag{font-family:"Ranille",sans-serif;font-size:20px;color:var(--orange);letter-spacing:.06em;text-transform:uppercase;text-shadow:var(--glow-o)}
+  .dj .meta{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--muted)}
+  .dj h2{font-family:"Bevan",serif;font-weight:400;text-transform:uppercase;font-size:clamp(24px,3.4vw,38px);line-height:1;margin:4px 0 6px;color:var(--cream)}
+  .dj h2 em{font-style:normal;color:var(--gold)}
+  .dj p{color:var(--muted);font-size:13px;max-width:52ch}
+  @media (max-width:640px){.dj p{margin:0 auto}}
+  .dj p a{color:var(--gold);text-decoration:none;border-bottom:1px dashed var(--gold)}
 
   /* TICKER */
-  .ticker{
-    margin:0 -22px;overflow:hidden;white-space:nowrap;background:rgba(10,10,10,.6);
-    border-bottom:1px solid rgba(245,240,232,.1);
-  }
+  .ticker{margin:46px -22px 0;overflow:hidden;white-space:nowrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(12,10,7,.5)}
   .ticker .line{
-    display:inline-block;padding:12px 0;animation:slide 32s linear infinite;
-    font-family:"Ranille",sans-serif;font-weight:400;
-    font-size:22px;letter-spacing:.12em;text-transform:uppercase;
-    color:rgba(245,240,232,.55);
+    display:inline-block;padding:12px 0;animation:slide 30s linear infinite;
+    font-family:"Bevan",serif;font-size:20px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
   }
-  .ticker .line span{margin:0 22px}
-  .ticker .line .o{color:var(--orange);text-shadow:var(--glow-o)}
-  .ticker .line .c{color:var(--cyan);text-shadow:var(--glow-c)}
+  .ticker .line span{margin:0 20px}
+  .ticker .line .g{color:var(--gold)}
   @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* FOOTER */
-  footer{
-    margin-top:36px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
-    font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,240,232,.5)
-  }
-  footer a{color:var(--bone);text-decoration:none;border-bottom:1px dashed rgba(245,240,232,.25)}
-  footer a:hover{color:var(--orange);border-color:var(--orange)}
-  footer .tag{font-family:"Ranille",sans-serif;font-size:14px;color:var(--orange);letter-spacing:.18em;text-transform:uppercase}
+  footer{margin-top:32px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+  footer a{color:var(--cream);text-decoration:none;border-bottom:1px dashed var(--line)}
+  footer a:hover{color:var(--gold);border-color:var(--gold)}
+  footer .tag{font-family:"Permanent Marker",cursive;font-size:16px;color:var(--gold);letter-spacing:.02em;text-transform:none}
 
-  /* MODAL */
-  .modal{
-    position:fixed;inset:0;display:none;align-items:center;justify-content:center;
-    background:rgba(10,10,10,.85);backdrop-filter:blur(10px);z-index:9;padding:20px;
+  /* TOAST */
+  .toast{
+    position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);
+    background:var(--gold);color:var(--ink2);font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    padding:11px 18px;border-radius:6px;opacity:0;pointer-events:none;transition:.25s ease;z-index:20;box-shadow:0 10px 30px rgba(0,0,0,.5)
   }
-  .modal.on{display:flex;animation:fadeIn .35s ease both}
-  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-  .box{
-    max-width:480px;width:100%;border:1px solid var(--orange);border-radius:16px;
-    background:#101010;padding:26px;text-align:center;
-    box-shadow:0 0 40px rgba(255,107,53,.25);
-    position:relative;
-  }
-  .box .x{position:absolute;top:10px;right:14px;color:rgba(245,240,232,.6);cursor:pointer;font-size:18px}
-  .box h4{
-    font-family:"Ranille",sans-serif;font-weight:400;font-size:36px;color:var(--orange);
-    line-height:1;letter-spacing:.03em;text-shadow:var(--glow-o);
-  }
-  .box .addr{margin:14px 0 6px;font-size:16px;color:var(--bone)}
-  .box .addr b{font-family:"Ranille",sans-serif;font-size:22px;letter-spacing:.03em}
-  .box .w{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan)}
-  .box .n{margin-top:12px;font-size:12px;color:rgba(245,240,232,.65)}
-  .box .tag{font-family:"Ranille",sans-serif;font-size:14px;color:var(--orange);letter-spacing:.18em;text-transform:uppercase}
+  .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 
-  /* === MOBILE === */
+  /* MOBILE */
   @media (max-width:640px){
     .wrap{padding:14px 14px 50px}
-    .top{padding:8px 12px;border-radius:14px;flex-wrap:wrap;gap:8px;justify-content:center}
-    .top .pill{font-size:9px;letter-spacing:.18em;padding:5px 10px}
-    .logo{font-size:16px}
-
-    .hero{margin:28px 0 14px}
-    .kicker{font-size:9px;letter-spacing:.28em;padding:6px 11px}
-    h1{
-      font-size:clamp(42px, 14vw, 78px);
-      max-width:100%;
-      margin:18px auto 6px;
-      letter-spacing:.01em;
-    }
-    h1 .accent{font-size:1.15em;line-height:.85}
-    .lead{font-size:13px;letter-spacing:0;line-height:1.5;padding:0 4px}
-
-    .count{grid-template-columns:repeat(4,1fr);gap:6px;max-width:100%}
-    .cell{padding:11px 4px 8px;border-radius:9px}
-    .num{font-size:clamp(28px,9vw,42px)}
-    .lbl{font-size:8px;letter-spacing:.22em}
-    .when{font-size:10px;letter-spacing:.22em;margin-top:10px}
-
-    .cta{gap:7px;margin-top:18px}
-    .btn{padding:11px 13px;font-size:10px;letter-spacing:.18em;border-radius:9px}
-
-    .grid{margin:32px 0;gap:14px}
-    .wanted{transform:rotate(0);border-width:4px}
-    .wanted .head{padding:12px 12px 10px}
-    .wanted .head .big{font-size:46px;letter-spacing:.04em}
-    .wanted .head .small{font-size:8px;letter-spacing:.35em}
-    .wanted .head .sub{font-size:9px;letter-spacing:.2em}
-    .wanted .imgBox{padding:10px}
-    .wanted .body{padding:12px 12px 14px}
-    .wanted .body .name{font-size:19px}
-    .wanted .body .akah{font-size:10px;letter-spacing:.25em}
-    .wanted .body .charges li{font-size:8px;padding:3px 6px}
-
-    .clues{padding:18px 16px}
-    .clues h2{font-size:clamp(24px,7.5vw,36px);line-height:1}
-    .clues .meta{font-size:9px;letter-spacing:.28em}
-    .clues .intro{font-size:13px}
-    .row{grid-template-columns:78px 1fr;gap:10px;font-size:13px;padding:10px 0}
-    .k{font-size:9px;letter-spacing:.16em}
-    .v{font-size:13px;letter-spacing:.02em}
-
-    .manifesto{margin-top:36px}
-    .manifesto .inner{padding:54px 18px}
-    .manifesto h3{font-size:clamp(28px,9.5vw,46px);line-height:.95}
-    .manifesto p{font-size:13px}
-    .manifesto .tag{font-size:16px;letter-spacing:.08em}
-
-    .ticker .line{font-size:17px;letter-spacing:.08em}
-    .ticker .line span{margin:0 16px}
-
-    footer{
-      margin-top:30px;flex-direction:column;align-items:flex-start;gap:8px;
-      font-size:9px;letter-spacing:.22em;
-    }
-    footer .tag{font-size:13px;letter-spacing:.14em}
-
-    .box{padding:22px 18px}
-    .box h4{font-size:30px}
-    .box .addr{font-size:14px}
-    .box .addr b{font-size:18px}
+    .top{padding:8px 12px;flex-wrap:wrap;gap:8px;justify-content:center}
+    .logo{font-size:15px}
+    .pill{font-size:9px;letter-spacing:.2em;padding:5px 10px}
+    .panel{text-align:center}
+    .kick{font-size:22px}
+    h1{font-size:clamp(30px,9.5vw,46px)}
+    .sub{letter-spacing:.3em}
+    .lead{font-size:13px;margin-left:auto;margin-right:auto}
+    .count{margin-left:auto;margin-right:auto;gap:7px}
+    .cta{justify-content:center;gap:8px}
+    .btn{padding:11px 13px;font-size:10px;letter-spacing:.16em}
+    .ticker .line{font-size:16px}
+    footer{flex-direction:column;align-items:flex-start;gap:8px;font-size:9px}
   }
 </style>
 </head>
 <body>
 
+<!-- graffiti accents -->
+<span class="scrawl s1">wanna surf?</span>
+<span class="scrawl s2">surf life.</span>
+<span class="scrawl s3">never stop chillin'</span>
+<svg class="star" style="top:120px;right:120px" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="%23E0A92E"><path d="M12 2l2.4 6.9L22 9l-5.6 4.6L18 21l-6-4-6 4 1.6-7.4L2 9l7.6-.1z" stroke="#E0A92E" stroke-width="1.4"/></svg>
+<svg class="star" style="bottom:140px;left:70px" width="34" height="34" viewBox="0 0 24 24"><path d="M12 2l2.4 6.9L22 9l-5.6 4.6L18 21l-6-4-6 4 1.6-7.4L2 9l7.6-.1z" stroke="#F4EDDF" stroke-width="1.3" fill="none"/></svg>
+
 <div class="wrap">
 
   <!-- TOP -->
   <header class="top">
-    <div class="logo"><b>DD</b> // NASCE</div>
-    <div class="pill"><span class="blink"></span>Signal · Varese</div>
+    <div class="logo"><b>Duck Dive</b><span class="sl">//</span>Pub</div>
+    <div class="pill"><span class="blink"></span>Opening Party · Varese</div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <span class="kicker">// 28 · 05 · 2026 — h 18:00</span>
-    <h1>
-      Qualcosa sta per
-      <span class="accent">nascere.</span>
-    </h1>
-    <p class="lead">
-      Tavole al soffitto, neon che bruciano, spirits artigianali e birre senza glutine.
-      <b>Un nuovo covo</b> in centro città. <b>Drink like a rebel.</b>
-    </p>
 
-    <div class="count" id="cd" aria-live="polite">
-      <div class="cell"><div class="num" id="d">--</div><div class="lbl">giorni</div></div>
-      <div class="cell"><div class="num" id="h">--</div><div class="lbl">ore</div></div>
-      <div class="cell"><div class="num" id="m">--</div><div class="lbl">min</div></div>
-      <div class="cell"><div class="num" id="s">--</div><div class="lbl">sec</div></div>
-    </div>
-    <div class="when">// apertura · <b>28.05.2026</b> · golden hour</div>
+    <!-- POSTER -->
+    <figure class="flyer">
+      <img src="poster.jpg" alt="Duck Dive Pub — Opening Party · 19 Giugno · Varese" />
+    </figure>
 
-    <div class="cta">
-      <a class="btn primary" id="ics" href="#" download="duck-dive-pub-opening.ics">Salva la data</a>
-      <a class="btn" id="share" href="#">Condividi il segnale</a>
-      <a class="btn" href="https://instagram.com/duckdive___" target="_blank" rel="noopener">@duckdive___</a>
-    </div>
-  </section>
-
-  <!-- GRID: WANTED + CLUES -->
-  <section class="grid">
-    <article class="wanted">
-      <div class="head">
-        <div class="small">// ricompensa: il primo giro</div>
-        <div class="big">WANTED</div>
-        <div class="sub">rebels · surfers · nightowls</div>
-      </div>
-      <div class="imgBox">
-        <!-- Drop una papera WANTED (la bikini o la dirty) come wanted.png nella stessa cartella -->
-        <img src="wanted.png" alt="Duck Dive — Wanted poster"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-        <div class="placeholder" style="display:none">
-          drop "wanted.png"<br/>nella cartella<br/>per vedere la papera
-        </div>
-      </div>
-      <div class="body">
-        <div class="name">La Papera Cattiva</div>
-        <div class="akah">~ a.k.a. duck dive ~</div>
-        <ul class="charges">
-          <li>schiamazzi notturni</li>
-          <li>giri offerti</li>
-          <li>musica troppo alta</li>
-          <li>hangloose abusivo</li>
-        </ul>
-      </div>
-    </article>
-
-    <article class="clues">
-      <div class="meta">// indizi</div>
-      <h2>Il <em>posto</em> non ha ancora<br/>un nome sulla porta.</h2>
-      <p class="intro">
-        Le coordinate ci sono. L'indirizzo no — non ancora.
-        Allo scadere del countdown si svela tutto. O lo scopri prima, se hai fiuto.
+    <!-- PANEL -->
+    <div class="panel">
+      <span class="kick">taste the wave —</span>
+      <h1>Apre il primo<br/><span class="g">Duck Dive Pub</span></h1>
+      <div class="sub">Varese · Opening Party</div>
+      <p class="lead">
+        Pareti di cemento, graffiti, neon e LED elettrici, spirits artigianali e birre senza glutine.
+        <b>Venerdì 19 giugno</b> si apre, in Via Cavallotti. <b>Drink like a rebel.</b>
       </p>
 
-      <div class="rows">
-        <div class="row"><span class="k">città</span><span class="v">VAR<span class="censor" style="--w:2"></span>E <span style="opacity:.55">(VA)</span></span></div>
-        <div class="row"><span class="k">via</span><span class="v">F. CAV<span class="censor" style="--w:4"></span>TTI, 9</span></div>
-        <div class="row"><span class="k">lat</span><span class="v accent-c">45°49'17.1"N</span></div>
-        <div class="row"><span class="k">lon</span><span class="v accent-c">8°49'35.9"E</span></div>
-        <div class="row"><span class="k">giorno</span><span class="v">28 · 05 · 2026</span></div>
-        <div class="row"><span class="k">ora</span><span class="v">18:00 · golden hour</span></div>
-        <div class="row"><span class="k">parola</span><span class="v accent-o">REBEL</span></div>
+      <div class="count" id="cd" aria-live="polite">
+        <div class="cell"><div class="num" id="d">--</div><div class="lbl">giorni</div></div>
+        <div class="cell"><div class="num" id="h">--</div><div class="lbl">ore</div></div>
+        <div class="cell"><div class="num" id="m">--</div><div class="lbl">min</div></div>
+        <div class="cell"><div class="num" id="s">--</div><div class="lbl">sec</div></div>
       </div>
+      <div class="when">// opening · <b>19.06.2026</b> · dalle 18:00</div>
 
-      <div class="actions">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=45.82141,8.82664" target="_blank" rel="noopener">🧭 Apri sulla mappa</a>
-        <button class="btn" id="reveal">🔓 Svela l'indirizzo</button>
+      <div class="cta">
+        <a class="btn primary" id="gcal" href="#" target="_blank" rel="noopener">📅 Salva la data</a>
+        <button class="btn" id="share" type="button">↗ Condividi</button>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Via+Cavallotti+Varese" target="_blank" rel="noopener">🧭 Mappa</a>
+        <a class="btn" href="https://www.instagram.com/duckdive_pub/" target="_blank" rel="noopener">@duckdive_pub</a>
       </div>
-    </article>
+    </div>
   </section>
 
-  <!-- MANIFESTO -->
-  <section class="manifesto">
-    <div class="bg" aria-hidden="true"></div>
-    <div class="inner">
-      <h3>Non un pub. <em>Un covo.</em></h3>
-      <p>Onde, gin, gente vera. <span class="tag">Taste The Wave.</span></p>
+  <!-- DJ BAND -->
+  <section class="dj">
+    <div class="q" aria-hidden="true">?</div>
+    <div>
+      <div class="meta">// line-up</div>
+      <h2>Chi mette i <em>dischi</em>?</h2>
+      <p>Il DJ della serata è ancora top secret. <b style="color:var(--cream)">Lo scoprirete presto.</b>
+         Segui <a href="https://www.instagram.com/duckdive_pub/" target="_blank" rel="noopener">@duckdive_pub</a> per il reveal.</p>
     </div>
   </section>
 
   <!-- TICKER -->
   <div class="ticker" aria-hidden="true">
     <div class="line">
-      <span class="o">Drink like a rebel</span>·
-      <span>28.05.2026</span>·
-      <span class="c">Taste The Wave</span>·
-      <span>Varese</span>·
-      <span class="o">Duck Dive Pub</span>·
-      <span>h 18:00</span>·
-      <span class="c">Rebels welcome</span>·
-      <span>No dress code</span>·
-      <span class="o">Drink like a rebel</span>·
-      <span>28.05.2026</span>·
-      <span class="c">Taste The Wave</span>·
-      <span>Varese</span>·
-      <span class="o">Duck Dive Pub</span>·
-      <span>h 18:00</span>·
-      <span class="c">Rebels welcome</span>·
-      <span>No dress code</span>·
+      <span class="g">Opening Party</span>·
+      <span>19.06.2026</span>·
+      <span class="g">Taste The Wave</span>·
+      <span>Via Cavallotti · Varese</span>·
+      <span class="g">Dalle 18:00</span>·
+      <span>DJ? Lo scoprirete presto</span>·
+      <span class="g">Drink like a rebel</span>·
+      <span>Wanna surf?</span>·
+      <span class="g">Opening Party</span>·
+      <span>19.06.2026</span>·
+      <span class="g">Taste The Wave</span>·
+      <span>Via Cavallotti · Varese</span>·
+      <span class="g">Dalle 18:00</span>·
+      <span>DJ? Lo scoprirete presto</span>·
+      <span class="g">Drink like a rebel</span>·
+      <span>Wanna surf?</span>·
     </div>
   </div>
 
   <footer>
-    <div>© 2026 · Duck Dive · <span class="tag">Taste The Wave.</span></div>
+    <div>© 2026 · Duck Dive Pub · <span class="tag">Taste the wave.</span></div>
     <div>
       <a href="https://www.duckdive.surf" target="_blank" rel="noopener">duckdive.surf</a> ·
-      <a href="https://instagram.com/duckdive___" target="_blank" rel="noopener">@duckdive___</a>
+      <a href="https://www.instagram.com/duckdive_pub/" target="_blank" rel="noopener">@duckdive_pub</a>
     </div>
   </footer>
 </div>
 
-<!-- MODAL -->
-<div class="modal" id="m" role="dialog" aria-modal="true">
-  <div class="box">
-    <div class="x" id="xBtn">✕</div>
-    <div class="kicker" style="color:var(--cyan);text-shadow:var(--glow-c)">// indirizzo svelato</div>
-    <h4>È ufficiale.</h4>
-    <p class="addr"><b>Via Felice Cavallotti, 9</b><br/>21100 Varese (VA)</p>
-    <p class="w">28 maggio 2026 · h 18:00</p>
-    <p class="n">Drink like a rebel. <span class="tag">Taste The Wave.</span></p>
-    <div class="cta" style="margin-top:16px">
-      <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Via+Felice+Cavallotti+9+Varese" target="_blank" rel="noopener">Apri Maps</a>
-      <button class="btn" id="copy">Copia indirizzo</button>
-    </div>
-  </div>
-</div>
+<div class="toast" id="toast">Link copiato</div>
 
 <script>
-  const target = new Date('2026-05-28T18:00:00+02:00').getTime();
   const $ = id => document.getElementById(id);
+  const target = new Date('2026-06-19T18:00:00+02:00').getTime();
   const pad = n => String(Math.max(0, Math.floor(n))).padStart(2,'0');
   function tick(){
     const diff = target - Date.now();
-    if(diff <= 0){ $('d').textContent=$('h').textContent=$('m').textContent=$('s').textContent="00"; show(); return; }
+    if(diff <= 0){ $('d').textContent=$('h').textContent=$('m').textContent=$('s').textContent="00"; return; }
     $('d').textContent = pad(diff/86400000);
     $('h').textContent = pad((diff%86400000)/3600000);
     $('m').textContent = pad((diff%3600000)/60000);
@@ -557,54 +335,40 @@
   }
   tick(); setInterval(tick, 1000);
 
-  const modal = $('m');
-  const show = () => modal.classList.add('on');
-  const hide = () => modal.classList.remove('on');
-  $('reveal').onclick = show;
-  $('xBtn').onclick = hide;
-  modal.addEventListener('click', e => { if(e.target === modal) hide(); });
+  // Salva la data → Google Calendar (18:00 CEST = 16:00Z, fino alle 02:00 CEST)
+  const gcal = "https://calendar.google.com/calendar/render?action=TEMPLATE"
+    + "&text=" + encodeURIComponent("Duck Dive Pub — Opening Party")
+    + "&dates=20260619T160000Z/20260620T000000Z"
+    + "&details=" + encodeURIComponent("Apre il primo Duck Dive Pub a Varese. DJ? Lo scoprirete presto. Drink like a rebel. Taste The Wave.\nhttps://pub.duckdive.surf")
+    + "&location=" + encodeURIComponent("Via Cavallotti, Varese")
+    + "&ctz=Europe/Rome";
+  $('gcal').href = gcal;
 
-  // Easter egg: REBEL
-  let buf = "";
-  addEventListener('keydown', e => {
-    buf = (buf + (e.key||"").toLowerCase()).slice(-5);
-    if(buf === "rebel") show();
-  });
-
-  $('share').onclick = async e => {
-    e.preventDefault();
-    const data = { title:'DD//NASCE', text:'Qualcosa sta per nascere a Varese. 28.05 · h 18:00.', url:location.href };
-    if(navigator.share){ try{ await navigator.share(data) }catch(_){} }
-    else { try{ await navigator.clipboard.writeText(location.href); alert('Link copiato.') }catch(_){} }
-  };
-
-  $('copy').onclick = async () => {
-    try{ await navigator.clipboard.writeText('Via Felice Cavallotti 9, 21100 Varese (VA)');
-      $('copy').textContent = '✓ Copiato'; }catch(_){}
-  };
-
-  const p2 = n => String(n).padStart(2,'0');
-  function ics(){
-    const s = new Date('2026-05-28T18:00:00+02:00'), e = new Date('2026-05-29T02:00:00+02:00');
-    const fmt = d => d.getUTCFullYear()+p2(d.getUTCMonth()+1)+p2(d.getUTCDate())+'T'+p2(d.getUTCHours())+p2(d.getUTCMinutes())+'00Z';
-    return [
-      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//DuckDive//Pub Opening//IT','METHOD:PUBLISH',
-      'BEGIN:VEVENT',
-      'UID:duckdive-opening-'+Math.random().toString(36).slice(2,8)+'@duckdive.surf',
-      'DTSTAMP:'+fmt(new Date()), 'DTSTART:'+fmt(s), 'DTEND:'+fmt(e),
-      'SUMMARY:Duck Dive Pub — Opening Night',
-      'LOCATION:Via Felice Cavallotti 9\\, 21100 Varese (VA)',
-      'DESCRIPTION:Drink like a rebel. Taste The Wave.',
-      'GEO:45.8167;8.8333',
-      'END:VEVENT','END:VCALENDAR'
-    ].join('\r\n');
+  // Toast helper
+  let tHide;
+  function toast(msg){
+    const t=$('toast'); t.textContent=msg; t.classList.add('on');
+    clearTimeout(tHide); tHide=setTimeout(()=>t.classList.remove('on'),2200);
   }
-  $('ics').onclick = e => {
-    e.preventDefault();
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(new Blob([ics()], {type:'text/calendar;charset=utf-8'}));
-    a.download = 'duck-dive-pub-opening.ics';
-    document.body.appendChild(a); a.click(); a.remove();
+
+  // Condividi → poster (senza DJ) come immagine, fallback link
+  const shareText = "Apre il primo Duck Dive Pub a Varese — Opening Party venerdì 19 giugno, dalle 18:00, Via Cavallotti. DJ? Lo scoprirete presto.";
+  const shareUrl  = location.href;
+  $('share').onclick = async () => {
+    try{
+      const resp = await fetch('poster.jpg', {cache:'force-cache'});
+      const blob = await resp.blob();
+      const file = new File([blob], 'duck-dive-opening-party.jpg', {type:'image/jpeg'});
+      if(navigator.canShare && navigator.canShare({files:[file]})){
+        await navigator.share({ files:[file], title:'Duck Dive Pub — Opening Party', text: shareText });
+        return;
+      }
+    }catch(_){}
+    if(navigator.share){
+      try{ await navigator.share({ title:'Duck Dive Pub — Opening Party', text: shareText, url: shareUrl }); return; }catch(_){}
+    }
+    try{ await navigator.clipboard.writeText(shareText + ' ' + shareUrl); toast('Link copiato'); }
+    catch(_){ window.open('poster.jpg','_blank'); }
   };
 </script>
 </body>
