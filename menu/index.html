@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duck Dive Pub — Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Zilla+Slab:wght@500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@700&family=Noto+Sans+SC:wght@400;700&family=Noto+Kufi+Arabic:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0E0E0E;
+    --amber:#FEC64A;
+    --blue:#4462AD;
+    --terra:#DD8F68;
+    --salmon:#EEA193;
+    --pink:#EFB9D3;
+    --logo:#FFC538;
+    --red:#C0392B;
+    --tag:#8E3B2C;
+    --ink:#0E0E0E;
+    --cream:#EFE6D0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--black);
+    font-family:'Space Mono',monospace;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  /* language-specific font fallbacks */
+  body.lang-zh{font-family:'Noto Sans SC',sans-serif}
+  body.lang-ar{font-family:'Noto Naskh Arabic',serif}
+  .title-font{font-family:'Bevan','Noto Serif SC','Noto Kufi Arabic',serif}
+  .item-font{font-family:'Zilla Slab','Noto Serif SC','Noto Kufi Arabic',serif;font-weight:700}
+
+  /* ---------- LANGUAGE BAR ---------- */
+  .langbar{
+    position:sticky;top:0;z-index:50;
+    display:flex;gap:6px;justify-content:center;flex-wrap:wrap;
+    background:#0E0E0E;padding:10px 8px;border-bottom:2px solid var(--logo);
+  }
+  .langbar button{
+    font-family:'Space Mono',monospace;font-weight:700;font-size:13px;
+    letter-spacing:.5px;cursor:pointer;
+    background:transparent;color:var(--logo);
+    border:1.5px solid var(--logo);border-radius:30px;
+    padding:6px 13px;transition:.15s;
+  }
+  .langbar button:hover{background:rgba(255,197,56,.15)}
+  .langbar button.active{background:var(--logo);color:#0E0E0E}
+
+  /* ---------- PAGE WRAPPER ---------- */
+  .sheet{max-width:1100px;margin:0 auto}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:#000;position:relative;
+    min-height:78vh;padding:40px 30px;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .cover .logo-top{position:absolute;top:34px;right:34px;width:135px}
+  .cover .logo-top img{width:100%;display:block}
+  .menu-word{
+    font-size:clamp(120px,30vw,300px);line-height:.82;
+    color:var(--logo);letter-spacing:-2px;text-align:center;
+  }
+  body.lang-ar .cover .logo-top{right:auto;left:34px}
+
+  /* ---------- MAIN GRID ---------- */
+  .menu-grid{display:grid;grid-template-columns:1fr 1fr}
+  .col{display:flex;flex-direction:column}
+  .pad{padding:30px 26px}
+
+  .bg-amber{background:var(--amber)}
+  .bg-blue{background:var(--blue);color:var(--cream)}
+  .bg-terra{background:var(--terra)}
+  .bg-salmon{background:var(--salmon)}
+  .bg-pink{background:var(--pink)}
+
+  .sec-title{
+    font-size:clamp(38px,6vw,62px);line-height:.95;color:var(--ink);
+    margin-bottom:6px;
+  }
+  .bg-blue .sec-title{color:var(--cream)}
+  .tapas-title{color:var(--red)}
+
+  .badge{
+    display:inline-block;font-family:'Space Mono',monospace;font-weight:700;
+    font-size:11px;letter-spacing:1px;padding:5px 12px;margin:4px 0 10px;
+    border-radius:4px;text-transform:uppercase;
+  }
+  .badge-dark{background:#0E0E0E;color:#fff}
+  .badge-outline{border:1.5px solid currentColor;color:#0E0E0E}
+  .bg-blue .badge-outline{color:var(--cream)}
+  .badge-pill{border:1.5px solid var(--terra);color:#0E0E0E;background:rgba(255,255,255,.25)}
+
+  .divider{height:14px;margin:18px 0;
+    background:
+      radial-gradient(circle at 7px 11px, transparent 6px, var(--ink) 6px 7px, transparent 7px) 0 0/14px 14px repeat-x;
+    opacity:.85}
+  .bg-blue .divider, .bg-terra .divider{filter:invert(0)}
+
+  /* signature cocktail item */
+  .sig{display:flex;gap:14px;margin:16px 0}
+  .sig .icon{flex:0 0 38px;width:38px;height:54px}
+  .sig .body{flex:1}
+  .item-name{font-size:21px;color:var(--ink);line-height:1.1}
+  .tagline{color:var(--tag);font-style:italic;font-size:12.5px;margin:3px 0 6px;line-height:1.35}
+  .desc{font-size:12.5px;line-height:1.45;color:#2a2118}
+  .bg-blue .desc{color:var(--cream)}
+
+  /* slider scales */
+  .scales{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+  .scale{display:flex;align-items:center;gap:7px;
+    border:1.5px solid var(--ink);border-radius:30px;padding:3px 11px;
+    font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:.5px}
+  .track{position:relative;width:46px;height:2px;background:var(--ink)}
+  .track::before{content:"";position:absolute;top:-3px;width:8px;height:8px;border-radius:50%;
+    background:var(--ink);left:var(--p,50%);transform:translateX(-50%)}
+
+  /* simple priced rows */
+  .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin:9px 0}
+  .row .name{font-size:19px}
+  .row .price,.head-price{font-size:30px;line-height:1}
+  .row-desc .name{display:block}
+  .sub-tag{color:var(--tag);font-style:italic;font-size:12px;margin-top:1px}
+  .bg-blue .sub-tag{color:#dfe6f5}
+
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .head-price{color:var(--ink)}
+  .bg-blue .head-price{color:var(--cream)}
+  .tapas-title ~ .head-price,.tapas-price{color:var(--red)}
+
+  /* bocce / illustration */
+  .illus-row{display:flex;justify-content:space-between;align-items:flex-end;gap:14px}
+  .bottle{width:88px;flex:0 0 88px}
+  .spirits{font-size:13px;font-weight:700;margin-bottom:8px;letter-spacing:.3px}
+  .note{font-size:12.5px;line-height:1.5;margin:7px 0}
+
+  /* beers */
+  .beer-flags{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:6px 0 4px}
+  .flag{display:inline-flex;align-items:center;gap:4px;font-family:'Space Mono',monospace;
+    font-weight:700;font-size:10px;letter-spacing:.5px;border:1.5px solid #0E0E0E;border-radius:30px;padding:3px 9px}
+  .flag.ml{border:none;font-size:14px;padding:0 2px}
+  .beers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center;margin-top:14px}
+  .beers .g{width:46px;height:64px;margin:0 auto 6px}
+  .beers .bn{font-size:14px;line-height:1.05}
+  .beers .pc{font-family:'Space Mono',monospace;font-size:11px;margin:3px 0 4px}
+  .beers .bp{font-size:26px}
+
+  /* tapas */
+  .tapas-row{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-top:6px}
+  .dish{width:120px;flex:0 0 120px}
+
+  /* ---------- BACK ---------- */
+  .back{background:#000;text-align:center;padding:60px 30px 40px}
+  .back img{width:min(260px,60vw);display:block;margin:0 auto 30px}
+  .back .foot{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;
+    font-family:'Space Mono',monospace;font-size:12px;color:#cfcfcf;letter-spacing:.5px}
+  .back .foot b{color:var(--logo)}
+
+  /* RTL */
+  body.lang-ar{direction:rtl}
+  body.lang-ar .sig{flex-direction:row-reverse}
+  body.lang-ar .cover .menu-word{direction:rtl}
+
+  /* responsive */
+  @media(max-width:760px){
+    .menu-grid{grid-template-columns:1fr}
+    .cover{min-height:62vh}
+    .cover .logo-top{width:104px;top:20px;right:20px}
+  }
+  @media print{
+    .langbar{display:none}
+    body{background:#fff}
+    .cover,.back{min-height:auto}
+  }
+</style>
+</head>
+<body class="lang-it">
+
+  <nav class="langbar" id="langbar"></nav>
+
+  <div class="sheet">
+    <!-- COVER -->
+    <section class="cover">
+      <div class="logo-top"><img src="assets/logo.png" alt="Varese Duck Dive Pub"></div>
+      <div class="menu-word title-font" data-k="menuWord">Menu</div>
+    </section>
+
+    <!-- MAIN MENU -->
+    <div class="menu-grid" id="grid"></div>
+
+    <!-- BACK -->
+    <section class="back">
+      <img src="assets/mascot.png" alt="Varese Duck Dive Pub">
+      <div class="foot">
+        <span><b data-k="web">Web</b> &nbsp;duckdive.surf</span>
+        <span><b data-k="instagram">Instagram</b> &nbsp;@duckdive_pub</span>
+      </div>
+    </section>
+  </div>
+
+<script>
+/* ===================== STRUCTURE (language-independent) ===================== */
+const SIG = [
+  {name:'Basil &ldquo;Slash&rdquo;', color:'#3FA46A', ss:24, cw:60, dkey:'c1'},
+  {name:'Arugam bay',                color:'#E2873A', ss:72, cw:80, dkey:'c2'},
+  {name:'El Majico',                 color:'#B5402F', ss:46, cw:92, dkey:'c3'},
+  {name:'Stout-a Wave',              color:'#3A2C24', ss:20, cw:56, dkey:'c4'},
+];
+const GT = [
+  {name:'Duck Dive London Dry', price:'10'},
+  {name:'Duck Dive Nazar&egrave; Navy Strength', price:'12'},
+  {name:'__ginEsteri__', price:'12'},
+];
+const BEERS = [
+  {name:'Duck Dive Pils',  vol:'4,5%', price:'5', fill:'#F4D06A'},
+  {name:'Duck Dive APA',   vol:'5%',   price:'6', fill:'#F2A40C'},
+  {name:'Duck Dive Stout', vol:'4,3%', price:'6', fill:'#3A2C24'},
+];
+
+/* ===================== TRANSLATIONS ===================== */
+const T = {
+  it:{ langName:'Italiano', menuWord:'Menu',
+    cocktails:'Cocktails', signature:'Duck Dive Signature', badgeTop:'Il top del top',
+    c1_tag:'Fresco, estivo, alcolico, cosa vuoi di pi&ugrave;?',
+    c1_desc:'Duck Dive Nazar&eacute; Navy Strength, basilico, zucchero, succo di limone, Three Cents Aegean Tonic.',
+    c2_tag:'Presente lo Sri Lanka? Questo costa meno di un volo.',
+    c2_desc:'Duck Dive London Dry, marmellata di albicocche, succo di limone, soda al curry e peperoncino.',
+    c3_tag:'A noi piace cos&igrave;, pochi ingredienti, che ti accarezzano in faccia&hellip; con un badile.',
+    c3_desc:'Duck Dive Black Wave, tequila al burro d&rsquo;arachidi, angostura, acido citrico.',
+    c4_tag:'Il dolce che non sapevi di volere.',
+    c4_desc:'Whisky Duck Dive, Cold Brew, zucchero, spuma di Stout Duck Dive.',
+    gt:'G&amp;T Premium', badgeLove:'Il grande amore', ginEsteri:'Gin esteri',
+    cocktail:'Cocktail', classici:'Classici', classiciDesc:'I tuoi preferiti easy.',
+    deluxe:'Deluxe', deluxeDesc:'I tuoi preferiti in giacca e cravatta.',
+    analcolici:'Analcolici', lazyDesc:'Gin 0, salvia, limone, birra analcolica.',
+    sweetDesc:'Bitter analcolico, lampone, limone, tonica.',
+    bocce:'Bocce', badgeParty:"It's party night?", spirits:'Gin / Amaro / Whisky / Vodka',
+    bocceNote1:'Bottiglia consigliata per circa 8 persone (o di meno, se lo spirito &egrave; quello giusto&hellip;).',
+    bocceNote2:'Servita con soft drinks per mixare.',
+    birre:'Birre', onTap:'Alla spina', glutenFree:'Gluten free!', lovely:'Lovely, lovely beer',
+    amari:'Amari', amariTag:'Senza l&rsquo;amaro, my friend, il dolce non &egrave; tanto dolce.',
+    distillati:'Distillati', distillatiTag:'Surf like a lord.',
+    vino:'Vino al calice', vinoTag:'La vita &egrave; troppo breve per bere vini mediocri. Chiedi allo staff le proposte.',
+    softs:'Softs', softsTag:'Se proprio devi guidare&hellip;',
+    tapas:'Tapas', tapasTag:'Fame? Chiedi allo staff cosa c&rsquo;&egrave; di buono.',
+    sweet:'Sweet', sour:'Sour', chill:'Chill', wild:'Wild', web:'Web', instagram:'Instagram'},
+
+  en:{ langName:'English', menuWord:'Menu',
+    cocktails:'Cocktails', signature:'Duck Dive Signature', badgeTop:'The best of the best',
+    c1_tag:'Fresh, summery, boozy &mdash; what more do you want?',
+    c1_desc:'Duck Dive Nazar&eacute; Navy Strength, basil, sugar, lemon juice, Three Cents Aegean Tonic.',
+    c2_tag:'You know Sri Lanka? This costs less than the flight.',
+    c2_desc:'Duck Dive London Dry, apricot jam, lemon juice, curry &amp; chilli soda.',
+    c3_tag:'We like it like this: a few ingredients that caress your face&hellip; with a shovel.',
+    c3_desc:'Duck Dive Black Wave, peanut-butter tequila, angostura, citric acid.',
+    c4_tag:'The dessert you didn&rsquo;t know you wanted.',
+    c4_desc:'Duck Dive Whisky, Cold Brew, sugar, Duck Dive Stout foam.',
+    gt:'G&amp;T Premium', badgeLove:'The great love', ginEsteri:'Imported gins',
+    cocktail:'Cocktails', classici:'Classics', classiciDesc:'Your easy favourites.',
+    deluxe:'Deluxe', deluxeDesc:'Your favourites in a suit and tie.',
+    analcolici:'Alcohol-free', lazyDesc:'Zero gin, sage, lemon, alcohol-free beer.',
+    sweetDesc:'Alcohol-free bitter, raspberry, lemon, tonic.',
+    bocce:'Bocce', badgeParty:"It's party night?", spirits:'Gin / Amaro / Whisky / Vodka',
+    bocceNote1:'Bottle recommended for about 8 people (or fewer, if the spirit is right&hellip;).',
+    bocceNote2:'Served with soft drinks to mix.',
+    birre:'Beers', onTap:'On tap', glutenFree:'Gluten free!', lovely:'Lovely, lovely beer',
+    amari:'Amari', amariTag:'Without the bitter, my friend, the sweet ain&rsquo;t so sweet.',
+    distillati:'Spirits', distillatiTag:'Surf like a lord.',
+    vino:'Wine by the glass', vinoTag:'Life&rsquo;s too short to drink mediocre wine. Ask the staff what&rsquo;s good.',
+    softs:'Soft drinks', softsTag:'If you really have to drive&hellip;',
+    tapas:'Tapas', tapasTag:'Hungry? Ask the staff what&rsquo;s good.',
+    sweet:'Sweet', sour:'Sour', chill:'Chill', wild:'Wild', web:'Web', instagram:'Instagram'},
+
+  es:{ langName:'Espa&ntilde;ol', menuWord:'Men&uacute;',
+    cocktails:'C&oacute;cteles', signature:'Duck Dive Signature', badgeTop:'Lo mejor de lo mejor',
+    c1_tag:'Fresco, veraniego, alcoh&oacute;lico, &iquest;qu&eacute; m&aacute;s quieres?',
+    c1_desc:'Duck Dive Nazar&eacute; Navy Strength, albahaca, az&uacute;car, zumo de lim&oacute;n, Three Cents Aegean Tonic.',
+    c2_tag:'&iquest;Te suena Sri Lanka? Esto cuesta menos que el vuelo.',
+    c2_desc:'Duck Dive London Dry, mermelada de albaricoque, zumo de lim&oacute;n, soda de curry y guindilla.',
+    c3_tag:'Nos gusta as&iacute;: pocos ingredientes que te acarician la cara&hellip; con una pala.',
+    c3_desc:'Duck Dive Black Wave, tequila al cacahuete, angostura, &aacute;cido c&iacute;trico.',
+    c4_tag:'El dulce que no sab&iacute;as que quer&iacute;as.',
+    c4_desc:'Whisky Duck Dive, Cold Brew, az&uacute;car, espuma de Stout Duck Dive.',
+    gt:'G&amp;T Premium', badgeLove:'El gran amor', ginEsteri:'Ginebras de importaci&oacute;n',
+    cocktail:'C&oacute;cteles', classici:'Cl&aacute;sicos', classiciDesc:'Tus favoritos, sin complicaciones.',
+    deluxe:'Deluxe', deluxeDesc:'Tus favoritos de etiqueta.',
+    analcolici:'Sin alcohol', lazyDesc:'Gin 0, salvia, lim&oacute;n, cerveza sin alcohol.',
+    sweetDesc:'Bitter sin alcohol, frambuesa, lim&oacute;n, t&oacute;nica.',
+    bocce:'Bocce', badgeParty:"It's party night?", spirits:'Gin / Amaro / Whisky / Vodka',
+    bocceNote1:'Botella recomendada para unas 8 personas (o menos, si el esp&iacute;ritu es el adecuado&hellip;).',
+    bocceNote2:'Servida con refrescos para mezclar.',
+    birre:'Cervezas', onTap:'De barril', glutenFree:'&iexcl;Sin gluten!', lovely:'Lovely, lovely beer',
+    amari:'Amari', amariTag:'Sin lo amargo, my friend, lo dulce no es tan dulce.',
+    distillati:'Destilados', distillatiTag:'Surf like a lord.',
+    vino:'Vino por copa', vinoTag:'La vida es demasiado corta para beber vinos mediocres. Pregunta al staff las propuestas.',
+    softs:'Refrescos', softsTag:'Si de verdad tienes que conducir&hellip;',
+    tapas:'Tapas', tapasTag:'&iquest;Hambre? Pregunta al staff qu&eacute; hay rico.',
+    sweet:'Sweet', sour:'Sour', chill:'Chill', wild:'Wild', web:'Web', instagram:'Instagram'},
+
+  fr:{ langName:'Fran&ccedil;ais', menuWord:'Menu',
+    cocktails:'Cocktails', signature:'Duck Dive Signature', badgeTop:'Le top du top',
+    c1_tag:'Frais, estival, alcoolis&eacute;, que demander de plus&nbsp;?',
+    c1_desc:'Duck Dive Nazar&eacute; Navy Strength, basilic, sucre, jus de citron, Three Cents Aegean Tonic.',
+    c2_tag:'Tu connais le Sri Lanka&nbsp;? &Ccedil;a co&ucirc;te moins cher que le vol.',
+    c2_desc:'Duck Dive London Dry, confiture d&rsquo;abricot, jus de citron, soda curry &amp; piment.',
+    c3_tag:'On l&rsquo;aime comme &ccedil;a&nbsp;: peu d&rsquo;ingr&eacute;dients qui te caressent le visage&hellip; &agrave; coups de pelle.',
+    c3_desc:'Duck Dive Black Wave, tequila au beurre de cacahu&egrave;te, angostura, acide citrique.',
+    c4_tag:'Le dessert que tu ignorais vouloir.',
+    c4_desc:'Whisky Duck Dive, Cold Brew, sucre, mousse de Stout Duck Dive.',
+    gt:'G&amp;T Premium', badgeLove:'Le grand amour', ginEsteri:'Gins import&eacute;s',
+    cocktail:'Cocktails', classici:'Classiques', classiciDesc:'Tes pr&eacute;f&eacute;r&eacute;s, version facile.',
+    deluxe:'Deluxe', deluxeDesc:'Tes pr&eacute;f&eacute;r&eacute;s en costume-cravate.',
+    analcolici:'Sans alcool', lazyDesc:'Gin 0, sauge, citron, bi&egrave;re sans alcool.',
+    sweetDesc:'Bitter sans alcool, framboise, citron, tonic.',
+    bocce:'Bocce', badgeParty:"It's party night?", spirits:'Gin / Amaro / Whisky / Vodka',
+    bocceNote1:'Bouteille conseill&eacute;e pour environ 8 personnes (ou moins, si l&rsquo;esprit est le bon&hellip;).',
+    bocceNote2:'Servie avec des sodas pour mixer.',
+    birre:'Bi&egrave;res', onTap:'Pression', glutenFree:'Sans gluten&nbsp;!', lovely:'Lovely, lovely beer',
+    amari:'Amari', amariTag:'Sans l&rsquo;amer, my friend, le sucr&eacute; n&rsquo;est pas si sucr&eacute;.',
+    distillati:'Spiritueux', distillatiTag:'Surf like a lord.',
+    vino:'Vin au verre', vinoTag:'La vie est trop courte pour boire du vin m&eacute;diocre. Demande nos suggestions au staff.',
+    softs:'Sodas', softsTag:'Si tu dois vraiment conduire&hellip;',
+    tapas:'Tapas', tapasTag:'Faim&nbsp;? Demande au staff ce qu&rsquo;il y a de bon.',
+    sweet:'Sweet', sour:'Sour', chill:'Chill', wild:'Wild', web:'Web', instagram:'Instagram'},
+
+  de:{ langName:'Deutsch', menuWord:'Men&uuml;',
+    cocktails:'Cocktails', signature:'Duck Dive Signature', badgeTop:'Das Beste vom Besten',
+    c1_tag:'Frisch, sommerlich, hochprozentig &mdash; was willst du mehr?',
+    c1_desc:'Duck Dive Nazar&eacute; Navy Strength, Basilikum, Zucker, Zitronensaft, Three Cents Aegean Tonic.',
+    c2_tag:'Kennst du Sri Lanka? Das hier ist billiger als der Flug.',
+    c2_desc:'Duck Dive London Dry, Aprikosenmarmelade, Zitronensaft, Curry-Chili-Soda.',
+    c3_tag:'So m&ouml;gen wir&rsquo;s: wenige Zutaten, die dir das Gesicht streicheln&hellip; mit einer Schaufel.',
+    c3_desc:'Duck Dive Black Wave, Erdnussbutter-Tequila, Angostura, Zitronens&auml;ure.',
+    c4_tag:'Das Dessert, von dem du nicht wusstest, dass du es willst.',
+    c4_desc:'Duck Dive Whisky, Cold Brew, Zucker, Duck Dive Stout-Schaum.',
+    gt:'G&amp;T Premium', badgeLove:'Die gro&szlig;e Liebe', ginEsteri:'Importierte Gins',
+    cocktail:'Cocktails', classici:'Klassiker', classiciDesc:'Deine Lieblinge, easy.',
+    deluxe:'Deluxe', deluxeDesc:'Deine Lieblinge in Schale geworfen.',
+    analcolici:'Alkoholfrei', lazyDesc:'Gin 0, Salbei, Zitrone, alkoholfreies Bier.',
+    sweetDesc:'Alkoholfreier Bitter, Himbeere, Zitrone, Tonic.',
+    bocce:'Bocce', badgeParty:"It's party night?", spirits:'Gin / Amaro / Whisky / Vodka',
+    bocceNote1:'Flasche empfohlen f&uuml;r etwa 8 Personen (oder weniger, wenn der Geist stimmt&hellip;).',
+    bocceNote2:'Serviert mit Softdrinks zum Mixen.',
+    birre:'Biere', onTap:'Vom Fass', glutenFree:'Glutenfrei!', lovely:'Lovely, lovely beer',
+    amari:'Amari', amariTag:'Ohne das Bittere, my friend, ist das S&uuml;&szlig;e nicht so s&uuml;&szlig;.',
+    distillati:'Spirituosen', distillatiTag:'Surf like a lord.',
+    vino:'Wein im Glas', vinoTag:'Das Leben ist zu kurz f&uuml;r mittelm&auml;&szlig;igen Wein. Frag das Team nach Empfehlungen.',
+    softs:'Softdrinks', softsTag:'Wenn du wirklich fahren musst&hellip;',
+    tapas:'Tapas', tapasTag:'Hunger? Frag das Team, was gut ist.',
+    sweet:'Sweet', sour:'Sour', chill:'Chill', wild:'Wild', web:'Web', instagram:'Instagram'},
+
+  zh:{ langName:'中文', menuWord:'菜单',
+    cocktails:'鸡尾酒', signature:'Duck Dive 招牌特调', badgeTop:'顶级中的顶级',
+    c1_tag:'清爽、夏日感、带劲，还想要什么？',
+    c1_desc:'Duck Dive Nazaré Navy Strength、罗勒、糖、柠檬汁、Three Cents Aegean Tonic。',
+    c2_tag:'知道斯里兰卡吗？这一杯比机票还便宜。',
+    c2_desc:'Duck Dive London Dry、杏子酱、柠檬汁、咖喱辣椒苏打。',
+    c3_tag:'我们就爱这样：寥寥几味，温柔地抚摸你的脸……用一把铁锹。',
+    c3_desc:'Duck Dive Black Wave、花生酱龙舌兰、安格仕苦精、柠檬酸。',
+    c4_tag:'你不知道自己想要的那款甜品。',
+    c4_desc:'Duck Dive 威士忌、冷萃咖啡、糖、Duck Dive 世涛泡沫。',
+    gt:'G&amp;T 精选', badgeLove:'此生挚爱', ginEsteri:'进口金酒',
+    cocktail:'鸡尾酒', classici:'经典款', classiciDesc:'你最爱的简单款。',
+    deluxe:'Deluxe 升级版', deluxeDesc:'你最爱的款，西装革履版。',
+    analcolici:'无酒精', lazyDesc:'无酒精金酒、鼠尾草、柠檬、无酒精啤酒。',
+    sweetDesc:'无酒精比特酒、覆盆子、柠檬、汤力水。',
+    bocce:'Bocce 整瓶', badgeParty:'今晚开趴？', spirits:'金酒 / 阿玛罗 / 威士忌 / 伏特加',
+    bocceNote1:'一瓶建议约 8 人享用（如果状态对了，更少人也行……）。',
+    bocceNote2:'附软饮，自由调配。',
+    birre:'啤酒', onTap:'生啤', glutenFree:'无麸质！', lovely:'好喝的好啤酒',
+    amari:'Amari 苦味酒', amariTag:'没有苦，朋友，甜也就不那么甜了。',
+    distillati:'烈酒', distillatiTag:'像个领主一样冲浪。',
+    vino:'单杯葡萄酒', vinoTag:'人生苦短，不喝平庸的酒。问问我们的店员有什么好货。',
+    softs:'软饮', softsTag:'如果你真的得开车的话……',
+    tapas:'Tapas 小食', tapasTag:'饿了？问问店员有什么好吃的。',
+    sweet:'甜', sour:'酸', chill:'柔和', wild:'狂野', web:'网站', instagram:'Instagram'},
+
+  ar:{ langName:'العربية', menuWord:'القائمة',
+    cocktails:'كوكتيلات', signature:'Duck Dive المميّزة', badgeTop:'الأفضل بلا منازع',
+    c1_tag:'منعش، صيفي، وكحولي، ماذا تريد أكثر؟',
+    c1_desc:'Duck Dive Nazaré Navy Strength، ريحان، سكر، عصير ليمون، Three Cents Aegean Tonic.',
+    c2_tag:'تعرف سريلانكا؟ هذا الكوكتيل أرخص من تذكرة الطيران.',
+    c2_desc:'Duck Dive London Dry، مربى المشمش، عصير ليمون، صودا بالكاري والفلفل الحار.',
+    c3_tag:'هكذا نحبّها: مكوّنات قليلة تداعب وجهك… بمجرفة.',
+    c3_desc:'Duck Dive Black Wave، تكيلا بزبدة الفول السوداني، أنغوستورا، حمض الستريك.',
+    c4_tag:'الحلوى التي لم تكن تعرف أنك تريدها.',
+    c4_desc:'ويسكي Duck Dive، قهوة كولد برو، سكر، رغوة ستاوت Duck Dive.',
+    gt:'G&amp;T بريميوم', badgeLove:'الحب الكبير', ginEsteri:'جين مستورد',
+    cocktail:'كوكتيلات', classici:'كلاسيكية', classiciDesc:'مفضّلاتك ببساطة.',
+    deluxe:'ديلوكس', deluxeDesc:'مفضّلاتك ببدلة وربطة عنق.',
+    analcolici:'بدون كحول', lazyDesc:'جين بدون كحول، مريمية، ليمون، بيرة بدون كحول.',
+    sweetDesc:'بيتر بدون كحول، توت العليق، ليمون، تونيك.',
+    bocce:'Bocce', badgeParty:'هل الليلة سهرة؟', spirits:'جين / أمارو / ويسكي / فودكا',
+    bocceNote1:'زجاجة تكفي حوالي 8 أشخاص (أو أقل، إذا كانت الروح المناسبة…).',
+    bocceNote2:'تُقدّم مع مشروبات غازية للمزج.',
+    birre:'بيرة', onTap:'من البرميل', glutenFree:'خالٍ من الغلوتين!', lovely:'بيرة رائعة، رائعة',
+    amari:'Amari', amariTag:'بدون المرارة يا صديقي، لا تكون الحلاوة حلوة.',
+    distillati:'مشروبات روحية', distillatiTag:'تزلّج كالنبلاء.',
+    vino:'نبيذ بالكأس', vinoTag:'الحياة أقصر من أن تشرب نبيذاً عادياً. اسأل الطاقم عن المقترحات.',
+    softs:'مشروبات غازية', softsTag:'إذا كان لا بد أن تقود…',
+    tapas:'تاباس', tapasTag:'جائع؟ اسأل الطاقم عن الأطيب.',
+    sweet:'حلو', sour:'حامض', chill:'هادئ', wild:'جامح', web:'الموقع', instagram:'إنستغرام'},
+};
+const ORDER = ['it','en','es','fr','de','zh','ar'];
+
+/* ===================== SVG ICONS ===================== */
+function svgCocktail(c){return `<svg class="icon" viewBox="0 0 38 54" fill="none" stroke="#0E0E0E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9h26L19 27z" fill="${c}"/><path d="M19 27v18"/><path d="M11 46h16"/><circle cx="30" cy="6" r="3.2" fill="${c}" stroke="none"/></svg>`;}
+function svgGlass(fill){return `<svg class="g" viewBox="0 0 46 64" stroke="#0E0E0E" stroke-width="2.4" stroke-linejoin="round"><path d="M9 6h28l-4 54H13z" fill="${fill}"/><path d="M11 20h24" stroke="none"/><path d="M11.3 19h23.4l-1.7 22H13z" fill="#EFE6D0" stroke="none"/><path d="M9 6h28l-4 54H13z" fill="none"/></svg>`;}
+function svgBottle(){return `<svg class="bottle" viewBox="0 0 60 150" stroke="#0E0E0E" stroke-width="2.2" stroke-linejoin="round"><rect x="24" y="4" width="12" height="14" rx="2" fill="#C8742F"/><path d="M22 18h16v14c0 4 8 8 8 18v82a6 6 0 0 1-6 6H20a6 6 0 0 1-6-6V50c0-10 8-14 8-18z" fill="#2E437A"/><rect x="16" y="70" width="28" height="40" rx="3" fill="#3C56A0" stroke="none"/><text x="30" y="86" font-family="Bevan, serif" font-size="11" fill="#FFC538" text-anchor="middle" stroke="none">DUCK</text><text x="30" y="100" font-family="Bevan, serif" font-size="11" fill="#FFC538" text-anchor="middle" stroke="none">DIVE</text></svg>`;}
+function svgDish(){return `<svg class="dish" viewBox="0 0 120 80" stroke="#0E0E0E" stroke-width="2.2"><ellipse cx="60" cy="44" rx="52" ry="30" fill="#D79A3E"/><ellipse cx="60" cy="40" rx="40" ry="22" fill="#E9B968"/><path d="M40 40c6-8 34-8 40 0" stroke="#9B5A2B" fill="none" stroke-width="3"/><circle cx="48" cy="38" r="4" fill="#B5402F" stroke="none"/><circle cx="72" cy="42" r="4" fill="#3FA46A" stroke="none"/><circle cx="60" cy="34" r="3.5" fill="#B5402F" stroke="none"/></svg>`;}
+
+/* ===================== RENDER ===================== */
+function scale(la,lb,p){return `<span class="scale">${la}<span class="track" style="--p:${p}%"></span>${lb}</span>`;}
+
+function render(lang){
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.body.className = 'lang-'+lang;
+
+  // static keys
+  document.querySelectorAll('[data-k]').forEach(el=>{el.innerHTML = t[el.dataset.k];});
+
+  // signature items
+  const sigHTML = SIG.map(s=>`
+    <div class="sig">
+      ${svgCocktail(s.color)}
+      <div class="body">
+        <div class="item-name item-font">${s.name}</div>
+        <div class="tagline">${t[s.dkey+'_tag']}</div>
+        <div class="desc">${t[s.dkey+'_desc']}</div>
+        <div class="scales">
+          ${scale(t.sweet,t.sour,s.ss)}
+          ${scale(t.chill,t.wild,s.cw)}
+        </div>
+      </div>
+    </div>`).join('');
+
+  // G&T rows
+  const gtHTML = GT.map(g=>{
+    const nm = g.name==='__ginEsteri__'? t.ginEsteri : g.name;
+    return `<div class="row"><span class="name item-font">${nm}</span><span class="price item-font">${g.price}</span></div>`;
+  }).join('');
+
+  // beers
+  const beerHTML = BEERS.map(b=>`
+    <div><div>${svgGlass(b.fill)}</div>
+      <div class="bn item-font">${b.name}</div>
+      <div class="pc">${b.vol}vol</div>
+      <div class="bp item-font">${b.price}</div></div>`).join('');
+
+  const left = `
+    <div class="col bg-amber pad">
+      <div class="sec-head"><h2 class="sec-title title-font">${t.cocktails}</h2></div>
+      <div class="sec-head" style="margin-top:6px">
+        <h3 class="item-name item-font">${t.signature}</h3><span class="head-price item-font">10</span>
+      </div>
+      <span class="badge badge-outline">${t.badgeTop}</span>
+      ${sigHTML}
+
+      <div class="divider"></div>
+      <h2 class="sec-title title-font" style="font-size:clamp(30px,5vw,46px)">${t.gt}</h2>
+      <span class="badge badge-dark">${t.badgeLove}</span>
+      ${gtHTML}
+
+      <div class="divider"></div>
+      <h2 class="sec-title title-font" style="font-size:clamp(30px,5vw,46px)">${t.cocktail}</h2>
+      <div class="row row-desc"><span><span class="name item-font">${t.classici}</span><span class="sub-tag">${t.classiciDesc}</span></span><span class="price item-font">8</span></div>
+      <div class="row row-desc"><span><span class="name item-font">${t.deluxe}</span><span class="sub-tag">${t.deluxeDesc}</span></span><span class="price item-font">12</span></div>
+
+      <div class="divider"></div>
+      <div class="sec-head"><h2 class="sec-title title-font" style="font-size:clamp(30px,5vw,46px)">${t.analcolici}</h2><span class="head-price item-font">7</span></div>
+      <div class="row row-desc"><span><span class="name item-font">The Lazy One</span><span class="desc">${t.lazyDesc}</span></span></div>
+      <div class="row row-desc"><span><span class="name item-font">Sweet Dream</span><span class="desc">${t.sweetDesc}</span></span></div>
+    </div>`;
+
+  const right = `
+    <div class="col">
+      <div class="bg-blue pad">
+        <div class="sec-head"><h2 class="sec-title title-font">${t.bocce}</h2><span class="head-price item-font">80-100</span></div>
+        <span class="badge badge-outline">${t.badgeParty}</span>
+        <div class="illus-row"><div>
+          <div class="spirits">${t.spirits}</div>
+          <div class="note">${t.bocceNote1}</div>
+          <div class="note">${t.bocceNote2}</div>
+        </div>${svgBottle()}</div>
+      </div>
+
+      <div class="bg-terra pad">
+        <div class="sec-head"><h2 class="sec-title title-font">${t.birre}</h2></div>
+        <div class="beer-flags">
+          <span class="flag">${t.onTap}</span>
+          <span class="flag">${t.glutenFree}</span>
+          <span class="flag ml">0,4l</span>
+        </div>
+        <span class="badge badge-dark">${t.lovely}</span>
+        <div class="beers">${beerHTML}</div>
+      </div>
+
+      <div class="bg-salmon pad">
+        <div class="sec-head"><h2 class="sec-title title-font" style="font-size:clamp(28px,4.4vw,40px)">${t.amari}</h2><span class="head-price item-font">5</span></div>
+        <div class="sub-tag">${t.amariTag}</div>
+        <div class="sec-head" style="margin-top:14px"><h2 class="sec-title title-font" style="font-size:clamp(28px,4.4vw,40px)">${t.distillati}</h2><span class="head-price item-font">5-10</span></div>
+        <div class="sub-tag">${t.distillatiTag}</div>
+        <div class="sec-head" style="margin-top:14px"><h2 class="sec-title title-font" style="font-size:clamp(28px,4.4vw,40px)">${t.vino}</h2><span class="head-price item-font">6</span></div>
+        <div class="sub-tag">${t.vinoTag}</div>
+        <div class="sec-head" style="margin-top:14px"><h2 class="sec-title title-font" style="font-size:clamp(28px,4.4vw,40px)">${t.softs}</h2><span class="head-price item-font">5</span></div>
+        <div class="sub-tag">${t.softsTag}</div>
+      </div>
+
+      <div class="bg-pink pad" style="flex:1">
+        <div class="sec-head"><h2 class="sec-title title-font tapas-title">${t.tapas}</h2><span class="head-price item-font tapas-price">5</span></div>
+        <div class="tapas-row"><div class="sub-tag" style="max-width:55%">${t.tapasTag}</div>${svgDish()}</div>
+      </div>
+    </div>`;
+
+  document.getElementById('grid').innerHTML = left + right;
+}
+
+/* ===================== LANG BAR ===================== */
+const bar = document.getElementById('langbar');
+ORDER.forEach(l=>{
+  const b=document.createElement('button');
+  b.innerHTML = T[l].langName;
+  b.dataset.l=l;
+  b.onclick=()=>{setLang(l);};
+  bar.appendChild(b);
+});
+function setLang(l){
+  render(l);
+  [...bar.children].forEach(b=>b.classList.toggle('active', b.dataset.l===l));
+  try{localStorage.setItem('ddlang',l);}catch(e){}
+}
+setLang(localStorage.getItem('ddlang') && T[localStorage.getItem('ddlang')] ? localStorage.getItem('ddlang') : 'it');
+</script>
+</body>
+</html>
