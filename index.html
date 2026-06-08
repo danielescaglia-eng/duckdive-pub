@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>DUCK DIVE PUB — Opening Party · 19 Giugno · Varese</title>
-<meta name="description" content="Apre il primo Duck Dive Pub a Varese. Opening Party venerdì 19 giugno dalle 18:00, Via Cavallotti. DJ? Lo scoprirete presto. Drink like a rebel." />
-<meta property="og:title" content="DUCK DIVE PUB — Opening Party · 19.06 Varese" />
-<meta property="og:description" content="Apre il primo Duck Dive Pub a Varese. 19 giugno dalle 18:00. DJ? Lo scoprirete presto. Taste The Wave." />
+<title>DUCK DIVE PUB — Opening Party · 18 Giugno · Varese</title>
+<meta name="description" content="Apre il primo Duck Dive Pub a Varese. Opening Party giovedì 18 giugno dalle 18:00, Via Cavallotti. DJ? Lo scoprirete presto. Drink like a rebel." />
+<meta property="og:title" content="DUCK DIVE PUB — Opening Party · 18.06 Varese" />
+<meta property="og:description" content="Apre il primo Duck Dive Pub a Varese. 18 giugno dalle 18:00. DJ? Lo scoprirete presto. Taste The Wave." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="poster.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -247,7 +247,7 @@
 
     <!-- POSTER -->
     <figure class="flyer">
-      <img src="poster.jpg" alt="Duck Dive Pub — Opening Party · 19 Giugno · Varese" />
+      <img src="poster.jpg" alt="Duck Dive Pub — Opening Party · 18 Giugno · Varese" />
     </figure>
 
     <!-- PANEL -->
@@ -257,7 +257,7 @@
       <div class="sub">Varese · Opening Party</div>
       <p class="lead">
         Pareti di cemento, graffiti, neon e LED elettrici, spirits artigianali e birre senza glutine.
-        <b>Venerdì 19 giugno</b> si apre, in Via Cavallotti. <b>Drink like a rebel.</b>
+        <b>Giovedì 18 giugno</b> si apre, in Via Cavallotti. <b>Drink like a rebel.</b>
       </p>
 
       <div class="count" id="cd" aria-live="polite">
@@ -266,7 +266,7 @@
         <div class="cell"><div class="num" id="m">--</div><div class="lbl">min</div></div>
         <div class="cell"><div class="num" id="s">--</div><div class="lbl">sec</div></div>
       </div>
-      <div class="when">// opening · <b>19.06.2026</b> · dalle 18:00</div>
+      <div class="when">// opening · <b>18.06.2026</b> · dalle 18:00</div>
 
       <div class="cta">
         <a class="btn primary" id="gcal" href="#" target="_blank" rel="noopener">📅 Salva la data</a>
@@ -292,7 +292,7 @@
   <div class="ticker" aria-hidden="true">
     <div class="line">
       <span class="g">Opening Party</span>·
-      <span>19.06.2026</span>·
+      <span>18.06.2026</span>·
       <span class="g">Taste The Wave</span>·
       <span>Via Cavallotti · Varese</span>·
       <span class="g">Dalle 18:00</span>·
@@ -300,7 +300,7 @@
       <span class="g">Drink like a rebel</span>·
       <span>Wanna surf?</span>·
       <span class="g">Opening Party</span>·
-      <span>19.06.2026</span>·
+      <span>18.06.2026</span>·
       <span class="g">Taste The Wave</span>·
       <span>Via Cavallotti · Varese</span>·
       <span class="g">Dalle 18:00</span>·
@@ -323,7 +323,7 @@
 
 <script>
   const $ = id => document.getElementById(id);
-  const target = new Date('2026-06-19T18:00:00+02:00').getTime();
+  const target = new Date('2026-06-18T18:00:00+02:00').getTime();
   const pad = n => String(Math.max(0, Math.floor(n))).padStart(2,'0');
   function tick(){
     const diff = target - Date.now();
@@ -338,7 +338,7 @@
   // Salva la data → Google Calendar (18:00 CEST = 16:00Z, fino alle 02:00 CEST)
   const gcal = "https://calendar.google.com/calendar/render?action=TEMPLATE"
     + "&text=" + encodeURIComponent("Duck Dive Pub — Opening Party")
-    + "&dates=20260619T160000Z/20260620T000000Z"
+    + "&dates=20260618T160000Z/20260619T000000Z"
     + "&details=" + encodeURIComponent("Apre il primo Duck Dive Pub a Varese. DJ? Lo scoprirete presto. Drink like a rebel. Taste The Wave.\nhttps://pub.duckdive.surf")
     + "&location=" + encodeURIComponent("Via Cavallotti 9, Varese")
     + "&ctz=Europe/Rome";
@@ -352,7 +352,7 @@
   }
 
   // Condividi → poster (senza DJ) come immagine, fallback link
-  const shareText = "Apre il primo Duck Dive Pub a Varese — Opening Party venerdì 19 giugno, dalle 18:00, Via Cavallotti. DJ? Lo scoprirete presto.";
+  const shareText = "Apre il primo Duck Dive Pub a Varese — Opening Party giovedì 18 giugno, dalle 18:00, Via Cavallotti. DJ? Lo scoprirete presto.";
   const shareUrl  = location.href;
   $('share').onclick = async () => {
     try{
