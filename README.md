@@ -1,17 +1,26 @@
-# Duck Dive Pub — Teaser Landing
+# Duck Dive Pub — pub.duckdive.surf
 
-Teaser per l'apertura del Duck Dive Pub a Varese — Via Felice Cavallotti 9 — **28.05.2026 · h 18:00**.
-
-Single-page, statico, deployato su GitHub Pages e servito da `pub.duckdive.surf`.
+Sito del Duck Dive Pub, Via Cavallotti 9, Varese. Statico, zero dipendenze e zero build,
+servito da GitHub Pages sulla root del branch `main`.
 
 ## File
 
-- `index.html` — pagina (HTML/CSS/JS inline, zero dipendenze)
-- `wanted.png` — papera WANTED del poster
-- `manifesto.jpg` — render del bar (background sezione manifesto)
-- `CNAME` — dominio custom per GitHub Pages
+- `index.html` — la pagina (markup + meta + JSON-LD `BarOrPub`)
+- `styles.css` — design system: token, blocchi menu, responsive, reduced-motion
+- `site.js` — contenuti modificabili (orari, cocktail, birre, etichette) + logica "aperto ora"
+- `assets/lockup.png` — logo con mascotte
+- `assets/og.jpg` — card 1200×630 per le anteprime social
+- `menu/` — menu completo in 7 lingue, raggiungibile da `/menu`
+- `CNAME` — dominio custom
 - `.nojekyll` — disabilita Jekyll, serve i file as-is
+
+## Modificare gli orari
+
+Stanno **solo** nell'array `HOURS` in cima a `site.js`: da lì escono sia la tabella
+sia il chip "Aperto ora" in alto a destra (che gestisce anche le chiusure dopo la
+mezzanotte). Se li cambi, aggiorna anche `openingHoursSpecification` nel JSON-LD
+di `index.html`, che è quello che legge Google.
 
 ## Deploy
 
-Vedi [DEPLOY.md](DEPLOY.md).
+Vedi [DEPLOY.md](DEPLOY.md). In breve: ogni push su `main` rideploya in 30-60 secondi.
