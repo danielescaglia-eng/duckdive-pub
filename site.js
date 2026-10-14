@@ -10,13 +10,13 @@
    Se cambiano, aggiorna anche openingHoursSpecification in index.html.
 -------------------------------------------------------------------- */
 const HOURS = [
-  { day:'Domenica',  open:18*60,      close:25*60 + 30 },  // 18:00 – 01:30
-  { day:'Lunedì',    open:18*60,      close:25*60 + 30 },  // 18:00 – 01:30
-  { day:'Martedì',   open:null,       close:null       },  // chiuso
-  { day:'Mercoledì', open:18*60 + 30, close:25*60 + 30 },  // 18:30 – 01:30
-  { day:'Giovedì',   open:18*60 + 30, close:25*60 + 30 },  // 18:30 – 01:30
-  { day:'Venerdì',   open:18*60 + 30, close:26*60      },  // 18:30 – 02:00
-  { day:'Sabato',    open:18*60 + 30, close:26*60      },  // 18:30 – 02:00
+  { day:'Domenica',  open:17*60 + 30, close:26*60 },  // 17:30 – 02:00
+  { day:'Lunedì',    open:null,       close:null  },  // chiuso
+  { day:'Martedì',   open:17*60 + 30, close:26*60 },  // 17:30 – 02:00
+  { day:'Mercoledì', open:17*60 + 30, close:26*60 },  // 17:30 – 02:00
+  { day:'Giovedì',   open:17*60 + 30, close:26*60 },  // 17:30 – 02:00
+  { day:'Venerdì',   open:17*60 + 30, close:26*60 },  // 17:30 – 02:00
+  { day:'Sabato',    open:17*60 + 30, close:26*60 },  // 17:30 – 02:00
 ];
 
 /* ---------- COCKTAIL SIGNATURE (dal menu stampato) ---------- */
